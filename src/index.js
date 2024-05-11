@@ -5,7 +5,7 @@ const app = express();
 const { PORT } = require("./config/serverConfig");
 const apiRoutes = require("./routes/index");
 
-// const UserRepository = require("./repository/user-repository");
+// const UserService = require("./services/user-service");
 
 const prepareAndStartServer = () => {
   app.use(bodyParser.json());
@@ -15,9 +15,6 @@ const prepareAndStartServer = () => {
   app.use("/api", apiRoutes);
   app.listen(PORT, async () => {
     console.log(`Sever Started on ${PORT}`);
-    // const repo = new UserRepository();
-    // const response = await repo.getById(1);
-    // console.log(response);
   });
 };
 
